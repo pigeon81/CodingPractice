@@ -9,7 +9,7 @@ public class FindCommon14
     private int ar2[];
     private int ar3[];
     private int ar[];
-    int m;
+    private int m;
 
     public FindCommon14(int n1, int n2, int n3, int n4)
     {
