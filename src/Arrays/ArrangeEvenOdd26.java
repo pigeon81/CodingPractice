@@ -1,16 +1,19 @@
+//arrange all even numbers first and then odd numbers
 package Arrays;
 
 import java.util.Scanner;
 
-public class Average18
+public class ArrangeEvenOdd26
 {
     private Scanner sc;
     private int ar[];
+    private int ar1[];
 
-    public Average18(int n)
+    public ArrangeEvenOdd26(int n)
     {
         sc = new Scanner(System.in);
         ar = new int[n];
+        ar1 = new int[n];
     }
 
     public void store()
@@ -22,39 +25,46 @@ public class Average18
         }
     }
 
-    public void getAverage()
+    public void segregate()
     {
-        int max = Integer.MIN_VALUE;
-        int min = Integer.MAX_VALUE;
+        int m = 0;
         for (int i = 0; i < ar.length; i++)
         {
-            if( ar[i] >= max)
+            if (ar[i] % 2 == 0)
             {
-                max = ar[i];
-            }
+                m++;
+                ar1[m-1] = ar[i];
 
-            if(min >= ar[i])
-            {
-                min = ar[i];
             }
         }
-
-        double sum = 0;
         for (int i = 0; i < ar.length; i++)
         {
-            sum = ar[i] + sum;
+            if (ar[i] % 2 != 0)
+            {
+                m++;
+                ar1[m-1] = ar[i];
+
+            }
         }
-        System.out.println("The average value is " +((sum-max-min)/(ar.length-2)));
+    }
+
+    public void display()
+    {
+        for (int i = 0; i < ar.length; i++)
+        {
+            System.out.print(ar1[i] + " ");
+        }
     }
 
     public static void main(String[] args)
     {
         System.out.println("Enter the size of the array");
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextByte();
+        int n = sc.nextInt();
 
-        Average18 s = new Average18(n);
+        ArrangeEvenOdd26 s = new ArrangeEvenOdd26(n);
         s.store();
-        s.getAverage();
+        s.segregate();
+        s.display();
     }
 }

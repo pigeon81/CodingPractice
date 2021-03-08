@@ -1,13 +1,14 @@
+//to print al the leaders
 package Arrays;
 
 import java.util.Scanner;
 
-public class Average18
+public class PrintLeaders23
 {
     private Scanner sc;
     private int ar[];
 
-    public Average18(int n)
+    public PrintLeaders23(int n)
     {
         sc = new Scanner(System.in);
         ar = new int[n];
@@ -22,39 +23,35 @@ public class Average18
         }
     }
 
-    public void getAverage()
+    public void findLeaders()
     {
-        int max = Integer.MIN_VALUE;
-        int min = Integer.MAX_VALUE;
         for (int i = 0; i < ar.length; i++)
         {
-            if( ar[i] >= max)
+            int m = 0;
+            for (int j = i+1; j < ar.length; j++)
             {
-                max = ar[i];
-            }
-
-            if(min >= ar[i])
-            {
-                min = ar[i];
+                if(ar[i] > ar[j])
+                {
+                    m++;
+                }
+                if(m == ar.length-1-i)
+                {
+                    System.out.print(ar[i] + " ");
+                }
             }
         }
-
-        double sum = 0;
-        for (int i = 0; i < ar.length; i++)
-        {
-            sum = ar[i] + sum;
-        }
-        System.out.println("The average value is " +((sum-max-min)/(ar.length-2)));
+        System.out.print(ar[ar.length-1]);
     }
 
     public static void main(String[] args)
     {
         System.out.println("Enter the size of the array");
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextByte();
+        int n = sc.nextInt();
 
-        Average18 s = new Average18(n);
+        PrintLeaders23 s = new PrintLeaders23(n);
         s.store();
-        s.getAverage();
+        s.findLeaders();
     }
+
 }

@@ -1,13 +1,14 @@
+//to find the smallest and the 2nd smallest number
 package Arrays;
 
 import java.util.Scanner;
 
-public class Average18
+public class FindSmall2ndSmall24
 {
     private Scanner sc;
     private int ar[];
 
-    public Average18(int n)
+    public FindSmall2ndSmall24(int n)
     {
         sc = new Scanner(System.in);
         ar = new int[n];
@@ -22,39 +23,30 @@ public class Average18
         }
     }
 
-    public void getAverage()
+    public void searchSmall()
     {
-        int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
+        int min2 = 0;
+
         for (int i = 0; i < ar.length; i++)
         {
-            if( ar[i] >= max)
+            if (ar[i] <= min)
             {
-                max = ar[i];
-            }
-
-            if(min >= ar[i])
-            {
+                min2 = min;
                 min = ar[i];
             }
         }
-
-        double sum = 0;
-        for (int i = 0; i < ar.length; i++)
-        {
-            sum = ar[i] + sum;
-        }
-        System.out.println("The average value is " +((sum-max-min)/(ar.length-2)));
+        System.out.println("smallest number is " +min + "  2nd smallest number is " +min2);
     }
 
     public static void main(String[] args)
     {
         System.out.println("Enter the size of the array");
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextByte();
+        int n = sc.nextInt();
 
-        Average18 s = new Average18(n);
+        FindSmall2ndSmall24 s = new FindSmall2ndSmall24(n);
         s.store();
-        s.getAverage();
+        s.searchSmall();
     }
 }

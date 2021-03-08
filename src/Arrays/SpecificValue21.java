@@ -1,13 +1,15 @@
+//check if the array contains two specified value 65 and 77
 package Arrays;
 
+import javax.jws.soap.SOAPMessageHandlers;
 import java.util.Scanner;
 
-public class Average18
+public class SpecificValue21
 {
     private Scanner sc;
     private int ar[];
 
-    public Average18(int n)
+    public SpecificValue21(int n)
     {
         sc = new Scanner(System.in);
         ar = new int[n];
@@ -22,39 +24,38 @@ public class Average18
         }
     }
 
-    public void getAverage()
+    public void checkValue()
     {
-        int max = Integer.MIN_VALUE;
-        int min = Integer.MAX_VALUE;
+        int m = 0, n = 0;
         for (int i = 0; i < ar.length; i++)
         {
-            if( ar[i] >= max)
+            if (ar[i] == 65)
             {
-                max = ar[i];
+                m++;
             }
-
-            if(min >= ar[i])
+            if (ar[i] == 77)
             {
-                min = ar[i];
+                n++;
             }
         }
-
-        double sum = 0;
-        for (int i = 0; i < ar.length; i++)
+        if (m > 0 && n > 0)
         {
-            sum = ar[i] + sum;
+            System.out.println("It contains the specific value");
         }
-        System.out.println("The average value is " +((sum-max-min)/(ar.length-2)));
+        else
+        {
+            System.out.println("It does not contain the specific values");
+        }
     }
 
     public static void main(String[] args)
     {
         System.out.println("Enter the size of the array");
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextByte();
+        int n = sc.nextInt();
 
-        Average18 s = new Average18(n);
+        SpecificValue21 s = new SpecificValue21(n);
         s.store();
-        s.getAverage();
+        s.checkValue();
     }
 }
