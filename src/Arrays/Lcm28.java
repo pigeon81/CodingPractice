@@ -1,4 +1,4 @@
-//To find the LCM of the two numbers 
+//To find the LCM of the two numbers
 package Arrays;
 
 import java.util.Scanner;
