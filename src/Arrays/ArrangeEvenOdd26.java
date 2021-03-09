@@ -12,6 +12,8 @@ public class ArrangeEvenOdd26
     public ArrangeEvenOdd26(int n)
     {
         sc = new Scanner(System.in);
+
+        //use names as ar1 and ar2
         ar = new int[n];
         ar1 = new int[n];
     }
@@ -27,6 +29,8 @@ public class ArrangeEvenOdd26
 
     public void segregate()
     {
+
+        //there is a better logic. try to solve it without using extra array.
         int m = 0;
         for (int i = 0; i < ar.length; i++)
         {
