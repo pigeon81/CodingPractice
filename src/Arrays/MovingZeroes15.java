@@ -24,29 +24,19 @@ public class MovingZeroes15
 
     public void moveZero()
     {
-        for (int i = 0; i < ar.length; i++)
+        int j = ar.length-1;
+        for (int i = 0; i != j; i++)
         {
-            if(ar[i] == 0)
+            if (ar[i] == 0)
             {
-                for (int j = i; j < ar.length-1; j++)
-                {
-                    ar[j] = ar[j+1];
-                }
-                ar[ar.length-1] = 0;
-            }
-        }
-        for (int i = 0; i < ar.length; i++)
-        {
-            if(ar[i] == 0)
-            {
-                for (int j = i; j < ar.length-1; j++)
-                {
-                    ar[j] = ar[j+1];
-                }
-                ar[ar.length-1] = 0;
+                ar[i] = ar[j];
+                ar[j] = 0;
+                j--;
+                i--;
             }
         }
     }
+
 
     public void getNewArray()
     {

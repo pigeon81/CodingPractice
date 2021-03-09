@@ -22,7 +22,7 @@ public class SumOf10s20
         }
     }
 
-    public void checkCondition()
+    public boolean checkCondition()
     {
         int m = 0;
         for (int i = 0; i < ar.length; i++)
@@ -34,11 +34,11 @@ public class SumOf10s20
         }
         if (m == 3)
         {
-            System.out.println("True");
+            return true;
         }
         else
         {
-            System.out.println("False");
+            return false;
         }
     }
 
@@ -50,6 +50,6 @@ public class SumOf10s20
 
         SumOf10s20 s = new SumOf10s20(n);
         s.store();
-        s.checkCondition();
+        System.out.println(s.checkCondition());
     }
 }

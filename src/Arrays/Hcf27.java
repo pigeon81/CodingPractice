@@ -12,16 +12,9 @@ public class Hcf27
         sc = new Scanner(System.in);
     }
 
-    public void getHcf()
+    public int getHcf(int n1, int n2)
     {
-        System.out.println("Enter the first number ");
-        int n1 = sc.nextInt();
-
-        System.out.println("Enter the second number ");
-        int n2 = sc.nextInt();
-
         int m = 0;
-        if ( n1 > n2 )
         {
             for (int i = 1; i <= n2; i++)
             {
@@ -34,25 +27,26 @@ public class Hcf27
                 }
             }
         }
-        if ( n2 > n1 )
-        {
-            for (int i = 1; i <= n1; i++)
-            {
-                if (n1 % i == 0 && n2 % i == 0)
-                {
-                    if (i > m)
-                    {
-                        m = i;
-                    }
-                }
-            }
-        }
-        System.out.println("HCF of the given number is " +m);
+        return m;
     }
 
     public static void main(String[] args)
     {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the first number ");
+        int n1 = sc.nextInt();
+
+        System.out.println("Enter the second number ");
+        int n2 = sc.nextInt();
+
         Hcf27 s = new Hcf27();
-        s.getHcf();
+        if (n1 > n2)
+        {
+            System.out.println(s.getHcf(n1,n2));
+        }
+        if (n2 > n1)
+        {
+            System.out.println(s.getHcf(n2,n1));
+        }
     }
 }

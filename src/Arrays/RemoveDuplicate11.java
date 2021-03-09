@@ -17,33 +17,31 @@ public class RemoveDuplicate11
     public void store()
     {
         System.out.println("Enter the values for the array");
-        for (int i = 0; i < ar.length; i++)
+        for (int i = 0; i < ar.length-1; i++)
         {
             ar[i] = sc.nextInt();
         }
     }
 
-    public void removal()
+    public void remove()
     {
         m = 0;
+        int n = 0;
         for (int i = 0; i < ar.length; i++)
         {
-            for (int j = i+1; j < ar.length; j++)
+            if ( ar[i] != n)
             {
-                if(ar[i] == ar[j])
+                for (int j = i + 1; j < ar.length; j++)
                 {
-                    m = m+1;
-                    for (int k = 0; k < j-i; k++)
+                    if (ar[i] == ar[j])
                     {
-                        ar[i+k] = ar[i+1+k];
-                    }
-                    for (int k = 0; k < ar.length-1-j; k++)
-                    {
-                        ar[j+k] = ar[j+k+1];
-                    }
-                    for (int k = 0; k < ar.length-1-j+1; k++)
-                    {
-                        ar[j-1+k] = ar[j+k];
+                        n = ar[i];
+                        m = m + 1;
+                        for (int k = 0; k < ar.length - 1 - j; k++)
+                        {
+                            ar[j + k] = ar[j + 1 + k];
+                        }
+
                     }
                 }
             }
@@ -55,7 +53,7 @@ public class RemoveDuplicate11
         if(m != 0)
         {
             System.out.println("New array after removal is ");
-            for (int i = 0; i < ar.length - 2; i++)
+            for (int i = 0; i < ar.length - 1; i++)
             {
                 System.out.print(ar[i] + " ");
             }
@@ -63,7 +61,7 @@ public class RemoveDuplicate11
         else
         {
             System.out.println("Array remains same as no common values");
-            for (int i = 0; i < ar.length; i++)
+            for (int i = 0; i < ar.length - m; i++)
             {
                 System.out.println(ar[i] + " ");
             }
@@ -76,9 +74,9 @@ public class RemoveDuplicate11
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
-        RemoveDuplicate11 s = new RemoveDuplicate11(n);
+        RemoveDuplicate11 s = new RemoveDuplicate11(n+1);
         s.store();
-        s.removal();
+        s.remove();
         s.display();
 
 

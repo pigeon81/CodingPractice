@@ -5,7 +5,7 @@ public class FindIndex4
 {
     public static void main(String[] args)
     {
-        int ar[] = new int[6];
+        int[] ar = new int[6];
         ar[0] = 9;
         ar[1] = 8;
         ar[2] = 7;

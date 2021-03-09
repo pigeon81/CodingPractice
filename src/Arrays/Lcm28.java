@@ -12,38 +12,34 @@ public class Lcm28
         sc = new Scanner(System.in);
     }
 
-    public void getLcm()
+    public void getLcm(int n,int n1,int n2)
     {
+        //we know LCM * HCF = A * B;
+        int lcm = (n1 * n2) / n;
+        System.out.println("LCM of the two numbers is " +lcm);
+    }
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
         System.out.println("Enter the value of the first number ");
         int n1 = sc.nextInt();
 
         System.out.println("Enter the value of the second number ");
         int n2 = sc.nextInt();
 
-        int m = 0, n = 0, count = 0;
-        for (int i = 1; i <= n2; i++)
+        Hcf27 h = new Hcf27();
+        int n = 0;
+        if (n1 > n2)
         {
-            if (count == 0)
-            {
-                m = n1 * i;
-                for (int j = 1; j <= n1; j++)
-                {
-                    n = n2 * j;
-                    if (m == n)
-                    {
-                        count++;
-                        System.out.println("LCM of the two numbers is " + m);
-                        break;
-                    }
-                }
-            }
+             n = h.getHcf(n1,n2);
         }
-    }
+        if (n2 > n1)
+        {
+             n = h.getHcf(n2,n1);
+        }
 
-    public static void main(String[] args)
-    {
         Lcm28 s = new Lcm28();
-        s.getLcm();
+        s.getLcm(n,n1,n2);
     }
 
 }

@@ -24,21 +24,22 @@ public class CheckArray19
 
     public void check()
     {
-        int m = 0;
+        boolean isPresent = false;
         for (int i = 0; i < ar.length; i++)
         {
             if (ar[i] == 0 || ar[i] == -1)
             {
-                m++;
+                isPresent = true;
+                break;
             }
         }
-        if(m == 0)
-        {
-            System.out.println("There are no 0 or -1 in the given array");
-        }
-        if(m > 0)
+        if(isPresent)
         {
             System.out.println("The array contains 0 or -1");
+        }
+        else
+        {
+            System.out.println("There are no 0 or -1 in the given array");
         }
     }
 

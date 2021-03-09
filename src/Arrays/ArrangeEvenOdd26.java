@@ -7,7 +7,6 @@ public class ArrangeEvenOdd26
 {
     private Scanner sc;
     private int ar[];
-    private int ar1[];
 
     public ArrangeEvenOdd26(int n)
     {
@@ -15,7 +14,6 @@ public class ArrangeEvenOdd26
 
         //use names as ar1 and ar2
         ar = new int[n];
-        ar1 = new int[n];
     }
 
     public void store()
@@ -29,36 +27,32 @@ public class ArrangeEvenOdd26
 
     public void segregate()
     {
-
-        //there is a better logic. try to solve it without using extra array.
-        int m = 0;
-        for (int i = 0; i < ar.length; i++)
+        int m, j = ar.length - 1;
+        for (int i = 0; i != j; i++)
         {
-            if (ar[i] % 2 == 0)
+            if( ar[i] % 2 != 0)
             {
-                m++;
-                ar1[m-1] = ar[i];
-
+                m = ar[i];
+                ar[i] = ar[j];
+                ar[j] = m;
+                j--;
+                i--;
             }
         }
-        for (int i = 0; i < ar.length; i++)
-        {
-            if (ar[i] % 2 != 0)
-            {
-                m++;
-                ar1[m-1] = ar[i];
 
-            }
-        }
     }
 
     public void display()
     {
         for (int i = 0; i < ar.length; i++)
         {
-            System.out.print(ar1[i] + " ");
+            System.out.print(ar[i] + "\t");
         }
     }
+
+
+//    2 12 6 8 1 7 45 3
+    // 2 3 7 1 12 6 8 45
 
     public static void main(String[] args)
     {
