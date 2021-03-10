@@ -14,13 +14,13 @@ public class Hcf27
 
     public int getHcf(int n1, int n2)
     {
-        int m = 0;
+        int m = 0;// could have initialised with 1. 1 is a factor of every number.
         {
             for (int i = 1; i <= n2; i++)
             {
                 if (n1 % i == 0 && n2 % i == 0)
                 {
-                    if (i > m)
+                    if (i > m)// not needed
                     {
                         m = i;
                     }
