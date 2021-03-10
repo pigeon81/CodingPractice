@@ -27,16 +27,9 @@ public class Lcm28
         System.out.println("Enter the value of the second number ");
         int n2 = sc.nextInt();
         // do this in lcm method 
-        Hcf27 h = new Hcf27(); calculation of greater and smaller number should be done in hcf method only.
-        int n = 0;
-        if (n1 > n2)
-        {
-             n = h.getHcf(n1,n2);
-        }
-        if (n2 > n1)
-        {
-             n = h.getHcf(n2,n1);
-        }
+        Hcf27 h = new Hcf27();
+        int n = h.getHcf(n1,n2);
+
 
         Lcm28 s = new Lcm28();
         s.getLcm(n,n1,n2);

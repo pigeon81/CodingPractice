@@ -12,18 +12,24 @@ public class Hcf27
         sc = new Scanner(System.in);
     }
 
+
+
     public int getHcf(int n1, int n2)
     {
-        int m = 0;// could have initialised with 1. 1 is a factor of every number.
+        int a = 0;
+        if (n2 > n1)
+        {
+            a = n1;
+            n1 = n2;
+            n2 = a;
+        }
+        int m = 1;// could have initialised with 1. 1 is a factor of every number.
         {
             for (int i = 1; i <= n2; i++)
             {
                 if (n1 % i == 0 && n2 % i == 0)
                 {
-                    if (i > m)// not needed
-                    {
-                        m = i;
-                    }
+                     m = i;
                 }
             }
         }
@@ -42,13 +48,7 @@ public class Hcf27
         Hcf27 s = new Hcf27();
 
         //should have been done in hcf method. method should've been called only once
-        if (n1 > n2)
-        {
             System.out.println(s.getHcf(n1,n2));
-        }
-        if (n2 > n1)
-        {
-            System.out.println(s.getHcf(n2,n1));
-        }
+
     }
 }
