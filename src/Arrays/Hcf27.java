@@ -40,6 +40,8 @@ public class Hcf27
         int n2 = sc.nextInt();
 
         Hcf27 s = new Hcf27();
+
+        //should have been done in hcf method. method should've been called only once
         if (n1 > n2)
         {
             System.out.println(s.getHcf(n1,n2));
